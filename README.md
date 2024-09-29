@@ -41,3 +41,9 @@ The following log files keeps track of the running of our various python script.
 
 Every script includes comments explaining the above listed process in details. Therefore, refer to the
 scripts for more information.
+
+
+At regular intervals, ensure that the project repository on your local machine is synced with GitHub.
+```git add .```
+```git commit -m "message"```
+```git push origin main```
