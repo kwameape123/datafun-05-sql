@@ -10,6 +10,8 @@ import csv
 root_directory = pl.Path.cwd()
 data_directory = root_directory.joinpath ('data')
 data_directory.mkdir(exist_ok = True)
+sql_directory = root_directory.joinpath('sql')
+sql_directory.mkdir(exist_ok= True)
 
 def csv_file(filename:str)->None:
     file_path = root_directory/data_directory/filename
