@@ -5,7 +5,7 @@ import pathlib
 import logging
 
 # Configure logging to write to a file, appending new logs to the existing file
-logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='log_database_creator.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Create a file path for the database
 db_file = pathlib.Path('books.db')
@@ -19,7 +19,7 @@ def create_database():
     except sqlite3.Error as e:
         print(f"Database creation Error: {e}")
 
-
+# Create our database tables using book.sql script
 def create_table():
     try:
         with sqlite3.connect(db_file) as connection:
@@ -31,6 +31,7 @@ def create_table():
     except sqlite3.Error as e:
         print(f'Table creation Error: {e}')
 
+# Insert records or data into our tables using the insert_records.sql script
 def insert_record():
     try:
         with sqlite3.connect(db_file) as connection:
@@ -42,11 +43,12 @@ def insert_record():
     except sqlite3.Error as e:
         print(f'Records insertion Error: {e}')
 
+#Define our main function to execute our python script as a standalone script.
 def main():
     logging.info("Program started")
-    create_database()
-    create_table()
-    insert_record()
+    #create_database()
+    #create_table()
+    #insert_record()
     logging.info("Program ended")
 
 if __name__ == "__main__":

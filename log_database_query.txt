@@ -1,0 +1,2 @@
+2024-09-29 14:36:44,106 - INFO - Program started
+2024-09-29 14:36:44,112 - INFO - All SQL operations completed successfully

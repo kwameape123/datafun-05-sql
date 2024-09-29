@@ -17,22 +17,24 @@ data_directory.mkdir(exist_ok = True)
 sql_directory = root_directory.joinpath('sql')
 sql_directory.mkdir(exist_ok= True)
 
+# Define a function to create csv data files into data folder.
 def csv_file(filename:str)->None:
     file_path = root_directory/data_directory/filename
     with open(file_path,mode = 'w', newline = '') as file:
         pass
 
+# Define a function to create sql script files into sql folder.
 def sql_file(filename:str)->None:
     file_path = root_directory/sql_directory/filename
     with open(file_path,mode = 'w', newline = '') as file:
         pass
 
 
-
+# Define our main function to execute our python script as a standalone script.
 def main()->None:
     logging.info("Program Started")
-    # csv_file('books.csv')
-    # csv_file('authors.csv')
+    csv_file('books.csv')
+    csv_file('authors.csv')
     sql_file('update_records.sql')
     sql_file('delete_records.sql')
     sql_file('query_aggregation.sql')
